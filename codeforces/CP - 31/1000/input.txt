@@ -1,0 +1,6 @@
+1
+5 3
+3 8 5 6 7
+
+minv=5 maxv=6
+minn=2 maxn=8
