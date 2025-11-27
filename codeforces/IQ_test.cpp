@@ -1,45 +1,29 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    int n, even = 0, odd = 0;
-    cin >> n;
-
-    int arr[n];
-
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-        if (arr[i] % 2 == 0)
-        {
-            even++;
-        }
-        else
-        {
-            odd++;
-        }
+int n,even,odd;
+int ecnt=0,ocnt=0;
+cin>>n;
+for (int i = 0; i < n; i++)
+{
+    int a;
+    cin>>a;
+    if(a&1){
+        ocnt++;
+        even=i+1;
+    }else{
+        ecnt++;
+        odd=i+1;
     }
+}
+if(ecnt==1){
+    cout<<odd;
+}else{
+    cout<<even;
+}
 
-    for (int i = 0; i < n; i++)
-    {
-        if (even == 1)
-        {
-            if (arr[i] % 2 == 0)
-            {
-                cout << i + 1;
-                break;
-            }
-        }
-        else
-        {
-            if (arr[i] % 2 != 0)
-            {
-                cout << i + 1;
-                break;
-            }
-        }
-    }
 
-    return 0;
+return 0;
 }

@@ -3,20 +3,19 @@ using namespace std;
 
 int main()
 {
-int n;
-cin>>n;
+int s,n,mini=INT_MAX;
+cin>>s>>n;
 int arr[n];
 for (int i = 0; i < n; i++)
 {
     cin>>arr[i];
 }
 sort(arr,arr+n);
-for (int i = 0; i < n; i++)
+for (int i = 0; i < n-s+1; i++)
 {
-    cout<<arr[i]<<" ";
+    mini=min(mini,arr[i+s-1]-arr[i]);
 }
-
-cout<<endl;
+cout<<mini;
 
 return 0;
 }
