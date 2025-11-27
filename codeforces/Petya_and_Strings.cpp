@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cctype>
+using namespace std;
+
+int main()
+{
+    string str1, str2;
+    cin >> str1;
+    cin >> str2;
+
+    for (int i = 0; str1[i] != '\0'; i++)
+    {
+        if (tolower(str1[i])!= tolower(str2[i]))
+        {
+            if (tolower(str1[i]) > tolower(str2[i]))
+            {
+                cout << 1;
+                break;
+            }
+            else {
+                cout << -1;
+                break;
+            }
+        }
+
+        if (str1[i+1] == '\0')
+        {
+            cout << 0;
+        }
+    }
+
+    return 0;
+}
