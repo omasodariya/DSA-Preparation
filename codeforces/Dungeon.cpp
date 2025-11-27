@@ -17,6 +17,17 @@ using namespace std;
 
 //*******************************************************************
 void solve(){
+int a,b,c;
+cin>>a>>b>>c;
+
+int mini=min(min(a,b),c);
+int sum=(a+b+c);
+
+
+if(mini>=sum/9 && sum%9==0)
+cout<<"YES"<<endl;
+else
+cout<<"NO"<<endl;
 
 }
 //*******************************************************************
@@ -32,7 +43,7 @@ int main()
   freopen("output.txt", "w", stdout);
 #endif
  
-  clock_t z = clock();
+//   clock_t z = clock();
 
 int t;
 cin>>t;
@@ -40,6 +51,6 @@ while(t--){
  solve();
 }
 
-cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
+// cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
 return 0;
 }

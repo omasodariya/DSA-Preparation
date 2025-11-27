@@ -1,9 +1,8 @@
 //------------------------------------------------------------------
 #include<bits/stdc++.h>
 #define endl '\n'
-#define ll long long
-#define yes cout<<"YES"<<endl
-#define no cout<<"NO"<<endl
+#define yes "YES"
+#define no "NO"
 #define outn(n) cout<<n<<endl
 #define test(t) while(t--)
 #define fori(i,n) for(int i=0;i<n;i++)
@@ -17,7 +16,21 @@ using namespace std;
 
 //*******************************************************************
 void solve(){
+string s;
+cin>>s;
+int n=s.size();
+stack<char> st;
+for (int i = 0; i < n; i++)
+{
+    st.push(s[i]);
+}
+for (int i = 0; i < n; i++)
+{
+    s+=st.top();
+    st.pop();
+}
 
+cout<<s<<endl;
 }
 //*******************************************************************
 
@@ -32,7 +45,7 @@ int main()
   freopen("output.txt", "w", stdout);
 #endif
  
-  clock_t z = clock();
+//   clock_t z = clock();
 
 int t;
 cin>>t;
@@ -40,6 +53,6 @@ while(t--){
  solve();
 }
 
-cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
+// cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
 return 0;
 }

@@ -1,5 +1,5 @@
 //------------------------------------------------------------------
-#include<bits/stdc++.h>
+#include<iostream>
 #define endl '\n'
 #define ll long long
 #define yes cout<<"YES"<<endl
@@ -17,6 +17,11 @@ using namespace std;
 
 //*******************************************************************
 void solve(){
+    ll n;
+    cin>>n;
+    n=n/2;
+    ll x=n;
+    cout<<4*(2*n*n*n+3*n*n+n)/3<<endl;
 
 }
 //*******************************************************************
@@ -32,7 +37,7 @@ int main()
   freopen("output.txt", "w", stdout);
 #endif
  
-  clock_t z = clock();
+  // clock_t z = clock();
 
 int t;
 cin>>t;
@@ -40,6 +45,6 @@ while(t--){
  solve();
 }
 
-cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
+// cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
 return 0;
 }

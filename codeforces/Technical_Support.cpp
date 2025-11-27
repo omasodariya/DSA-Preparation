@@ -1,9 +1,8 @@
 //------------------------------------------------------------------
 #include<bits/stdc++.h>
 #define endl '\n'
-#define ll long long
-#define yes cout<<"YES"<<endl
-#define no cout<<"NO"<<endl
+#define yes cout<<"Yes"<<endl
+#define no cout<<"No"<<endl
 #define outn(n) cout<<n<<endl
 #define test(t) while(t--)
 #define fori(i,n) for(int i=0;i<n;i++)
@@ -17,6 +16,26 @@ using namespace std;
 
 //*******************************************************************
 void solve(){
+    int n;
+    cin>>n;
+    string st;
+    cin>>st;
+    stack<char> s;
+    for (int i = 0; i < n; i++)
+    {
+        if(st[i]=='Q'){
+            s.push('Q');
+        }else
+            if(!s.empty() && s.top()=='Q'){
+                s.pop();
+            }  
+    }
+
+    if(s.empty()){
+        yes;
+    }else{
+        no;
+    }
 
 }
 //*******************************************************************

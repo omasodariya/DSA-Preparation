@@ -2,14 +2,14 @@
 #include<bits/stdc++.h>
 #define endl '\n'
 #define ll long long
+#define outn(n) cout<<n<<endl
 #define yes cout<<"YES"<<endl
 #define no cout<<"NO"<<endl
-#define outn(n) cout<<n<<endl
 #define test(t) while(t--)
 #define fori(i,n) for(int i=0;i<n;i++)
 #define ford(i,n) for(int i=n-1;i>=0;i--)
-#define arrin(arr,n) fori(n) cin>>arr[i]
-#define arrout(arr,n) fori(n) cout<<arr[i]
+#define arrin(arr,n) fori(i,n) cin>>arr[i]
+#define arrout(arr,n) fori(i,n) cout<<arr[i]
 #define arr2din(arr,n,m) fori(i,n) fori(j,m) cin>>arr[i][j]
 using namespace std;
 //-------------------------------------------------------------------
@@ -17,7 +17,17 @@ using namespace std;
 
 //*******************************************************************
 void solve(){
-
+    int n,m,temp,ans=0,rem=0;
+    cin>>n>>m;
+    temp=n;
+    ans=n;
+    while(temp>=m){
+        rem=temp%m;
+    temp=temp/m;
+    ans+=temp;
+    temp+=rem;
+    }    
+    cout<<ans;
 }
 //*******************************************************************
 
@@ -34,8 +44,8 @@ int main()
  
   clock_t z = clock();
 
-int t;
-cin>>t;
+int t=1;
+// cin>>t;
 while(t--){
  solve();
 }

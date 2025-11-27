@@ -3,13 +3,14 @@
 #define endl '\n'
 #define ll long long
 #define yes cout<<"YES"<<endl
-#define no cout<<"NO"<<endl
+#define no "NO"
 #define outn(n) cout<<n<<endl
 #define test(t) while(t--)
-#define fori(i,n) for(int i=0;i<n;i++)
+// #define fori(i,n) for(int i=0;i<n;i++)
+#define fori(n) for(int i=0;i<n;i++)
 #define ford(i,n) for(int i=n-1;i>=0;i--)
 #define arrin(arr,n) fori(n) cin>>arr[i]
-#define arrout(arr,n) fori(n) cout<<arr[i]
+#define arrout(arr,n) fori(n) cout<<arr[i]<<" "
 #define arr2din(arr,n,m) fori(i,n) fori(j,m) cin>>arr[i][j]
 using namespace std;
 //-------------------------------------------------------------------
@@ -17,6 +18,33 @@ using namespace std;
 
 //*******************************************************************
 void solve(){
+    ll n,m;
+    cin>>n>>m;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++)
+    {
+      cin>>arr[i];
+    }
+    sort(arr.rbegin(),arr.rend());
+
+    ll mx=arr[0]>m?0:arr[0];
+    ll a=0,b=1,sum=mx;
+
+    while(b<n){
+
+        if(arr[a]>arr[b]+1){
+          sum-=arr[a];
+          a++;
+        }else if(sum+arr[b]>m && a<b){
+          sum-=arr[a];
+          a++;  
+        }
+        sum+=arr[b];
+        b++;
+        if(sum<=m)
+          mx=max(mx,sum);
+    }
+     cout<<mx<<endl;
 
 }
 //*******************************************************************
@@ -32,7 +60,7 @@ int main()
   freopen("output.txt", "w", stdout);
 #endif
  
-  clock_t z = clock();
+//   clock_t z = clock();
 
 int t;
 cin>>t;
@@ -40,6 +68,6 @@ while(t--){
  solve();
 }
 
-cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
+// cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
 return 0;
 }

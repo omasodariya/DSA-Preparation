@@ -14,9 +14,40 @@
 using namespace std;
 //-------------------------------------------------------------------
 
+ll power(ll a,ll b){
+    
+    while (--b)
+    {
+        a=a*a;
+    }
+    return a;
+}
+
 
 //*******************************************************************
 void solve(){
+ll n;
+cin>>n;
+if(n<=9){
+outn(n);
+return;
+}
+
+ll digit=log10(n)+1;
+ll f=n/(int)(ceil)(pow(10,digit-1));
+ll b=f;
+
+while(digit!=1){
+    b=b*10;
+    b+=f;
+    digit--;
+}
+digit=log10(n)+1;
+
+if(n>=b)
+cout<<(digit-1)*9 +(n/(int)(ceil)(pow(10,digit-1))) <<endl;
+else
+cout<<(digit-1)*9 + (n/(int)(ceil)(pow(10,digit-1))) -1<<endl;
 
 }
 //*******************************************************************
@@ -32,7 +63,7 @@ int main()
   freopen("output.txt", "w", stdout);
 #endif
  
-  clock_t z = clock();
+//   clock_t z = clock();
 
 int t;
 cin>>t;
@@ -40,6 +71,6 @@ while(t--){
  solve();
 }
 
-cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
+// cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
 return 0;
 }

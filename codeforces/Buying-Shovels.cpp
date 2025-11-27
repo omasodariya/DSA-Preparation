@@ -17,6 +17,24 @@ using namespace std;
 
 //*******************************************************************
 void solve(){
+int n,k;
+cin>>n>>k;
+if(n<=k){
+    outn(1);
+}else{
+  int maxi=1;
+  for (int i = 2; i <= n/i && i<=k; i++)
+  {
+    if(n%i==0){
+    maxi=max(i,maxi);
+     if(n/i <= k)
+    maxi=max(n/i,maxi);
+
+    }
+  }
+  outn(n/maxi);
+}
+
 
 }
 //*******************************************************************
@@ -32,7 +50,7 @@ int main()
   freopen("output.txt", "w", stdout);
 #endif
  
-  clock_t z = clock();
+//   clock_t z = clock();
 
 int t;
 cin>>t;
@@ -40,6 +58,6 @@ while(t--){
  solve();
 }
 
-cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
+// cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);
 return 0;
 }

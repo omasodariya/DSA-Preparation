@@ -2,14 +2,14 @@
 #include<bits/stdc++.h>
 #define endl '\n'
 #define ll long long
+#define outn(n) cout<<n<<endl
 #define yes cout<<"YES"<<endl
 #define no cout<<"NO"<<endl
-#define outn(n) cout<<n<<endl
 #define test(t) while(t--)
 #define fori(i,n) for(int i=0;i<n;i++)
 #define ford(i,n) for(int i=n-1;i>=0;i--)
-#define arrin(arr,n) fori(n) cin>>arr[i]
-#define arrout(arr,n) fori(n) cout<<arr[i]
+#define arrin(arr,n) fori(i,n) cin>>arr[i]
+#define arrout(arr,n) fori(i,n) cout<<arr[i]
 #define arr2din(arr,n,m) fori(i,n) fori(j,m) cin>>arr[i][j]
 using namespace std;
 //-------------------------------------------------------------------
@@ -17,6 +17,34 @@ using namespace std;
 
 //*******************************************************************
 void solve(){
+    int n;
+    cin>>n;
+    vector<int> v(n);
+    ll sum=0;
+    for (int &i:v)
+    {
+        cin>>i;
+        sum+=i;
+    }
+    if(sum%2==0){
+        cout<<0<<endl;
+    }
+    else{
+
+        int mini=INT_MAX;
+        int cnt=0;
+        for (int &i:v)
+        {
+            cnt=0;
+            int temp=i;
+            while(i%2==temp%2){
+                i=i/2;
+                cnt++;
+            }
+            mini=min(cnt,mini);
+        }
+        cout<<mini<<endl;
+    }
 
 }
 //*******************************************************************
